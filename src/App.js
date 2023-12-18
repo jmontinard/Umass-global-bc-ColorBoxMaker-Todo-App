@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import BoxList from './BoxList';
+import TodoList from './TodoList';
+import './style.scss'; // Assuming you have a separate CSS file for styles
 
 function App() {
+  const [showBoxMaker, setShowBoxMaker] = useState(true);
+
+  const toggleApp = () => {
+    setShowBoxMaker(!showBoxMaker);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={toggleApp}>
+        Switch to {showBoxMaker ? 'Todo App' : 'Box Maker'}
+      </button>
+      {showBoxMaker ? <BoxList /> : <TodoList />}
     </div>
   );
 }

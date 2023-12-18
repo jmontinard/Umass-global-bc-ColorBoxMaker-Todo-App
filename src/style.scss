@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+
+  margin: 0;
+  padding: 1rem;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    label {
+      width: 150px;
+    }
+
+    input[type='text'] {
+      flex-grow: 1;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  }
+
+  button {
+    align-self: flex-start;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+// Add this to your styles.scss file
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  input[type='text'] {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:first-child {
+    background-color: #3498db; // Blue
+  }
+
+  &:nth-child(2) {
+    background-color: #2ecc71; // Green
+  }
+
+  &:nth-child(3) {
+    background-color: #e67e22; // Orange
+  }
+
+  &:last-child {
+    background-color: #e74c3c; // Red
+
+  }
+}
+
+.Box {
+  display: inline-block;
+  margin: 10px;
+  position: relative;
+}
+
+.Box > div {
+  position: relative;
+}
+
+.RemoveButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: red;
+}
+
+.NewBoxForm {
+  margin: 20px 0;
+}
+
+.NewBoxForm div {
+  margin-bottom: 10px;
+}
+
+.NewBoxForm label {
+  margin-right: 10px;
+}
+
+.NewBoxForm input {
+  margin-right: 10px;
+}
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transition: opacity 0.5s;
+
+  &.deleted {
+    animation: fadeOut 1s ease-out forwards;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+
+    input[type='text'] {
+      margin-right: 10px;
+    }
+  }
+
+  span {
+    flex-grow: 1;
+  }
+
+  button {
+    margin-left: 10px;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
